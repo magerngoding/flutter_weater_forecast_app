@@ -46,6 +46,7 @@ void main() {
       expect(result, tWeatherJsonMap);
     },
   );
+
   test(
     'should return a valid [WeatherEntity]',
     () async {
