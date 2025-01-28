@@ -83,7 +83,7 @@ class _PickPlacePageState extends State<PickPlacePage> {
                               context.read<CityCubit>().saveCity();
                               // setelah ketik selesai keyboard di close
                               FocusManager.instance.primaryFocus?.unfocus();
-                              Navigator.pop(context);
+                              Navigator.pop(context, 'refresh');
                             },
                             icon: Icon(Icons.check),
                           );
