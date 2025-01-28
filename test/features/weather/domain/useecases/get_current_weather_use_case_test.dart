@@ -3,7 +3,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_weater_forecast/core/error/failure.dart';
-import 'package:flutter_weater_forecast/features/weater/domain/usecases/get_current_weater_use_case.dart';
+import 'package:flutter_weater_forecast/features/weather/domain/usecases/get_current_weater_use_case.dart';
 import 'package:mockito/mockito.dart';
 
 import '../../../../helpers/dummy_data/weather_data.dart';

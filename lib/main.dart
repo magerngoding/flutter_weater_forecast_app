@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_weater_forecast/features/pick_place/presentation/cubit/city_cubit.dart';
 import 'package:flutter_weater_forecast/features/pick_place/presentation/pages/pick_place_page.dart';
+import 'package:flutter_weater_forecast/features/weather/presentation/bloc/current_weather/current_weather_bloc.dart';
+import 'package:flutter_weater_forecast/features/weather/presentation/pages/current_weather_page.dart';
 import 'package:flutter_weater_forecast/injection.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -24,6 +26,7 @@ class MainApp extends StatelessWidget {
       providers: [
         // Cara daftarkan CUBI
         BlocProvider(create: (context) => locator<CityCubit>()),
+        BlocProvider(create: (context) => locator<CurrentWeatherBloc>()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -36,8 +39,8 @@ class MainApp extends StatelessWidget {
         ),
         initialRoute: '/',
         routes: {
-          '/': (context) => PickPlacePage(),
-          AppRoute.pickPlace.name: (context) => Scaffold(),
+          '/': (context) => CurrentWeatherPage(),
+          AppRoute.pickPlace.name: (context) => PickPlacePage(),
           AppRoute.hourlyForecast.name: (context) => Scaffold(),
         },
       ),

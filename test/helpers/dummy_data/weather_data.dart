@@ -1,5 +1,5 @@
-import 'package:flutter_weater_forecast/features/weater/data/models/weather_model.dart';
-import 'package:flutter_weater_forecast/features/weater/domain/entities/weather_entity.dart';
+import 'package:flutter_weater_forecast/features/weather/data/models/weather_model.dart';
+import 'package:flutter_weater_forecast/features/weather/domain/entities/weather_entity.dart';
 
 const tCityName = 'Zocca';
 

@@ -4,7 +4,7 @@ import 'package:flutter_weater_forecast/api/key.dart';
 import 'package:flutter_weater_forecast/api/urls.dart';
 import 'package:flutter_weater_forecast/core/error/exception.dart';
 import 'package:http/http.dart' as http;
-import 'package:flutter_weater_forecast/features/weater/data/models/weather_model.dart';
+import 'package:flutter_weater_forecast/features/weather/data/models/weather_model.dart';
 
 abstract class WeatherRemoteDataSource {
   Future<WeatherModel> getCurrentWeather(String cityName);

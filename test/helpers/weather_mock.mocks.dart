@@ -9,9 +9,9 @@ import 'dart:typed_data' as _i10;
 
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:flutter_weater_forecast/core/error/failure.dart' as _i6;
-import 'package:flutter_weater_forecast/features/weater/domain/entities/weather_entity.dart'
+import 'package:flutter_weater_forecast/features/weather/domain/entities/weather_entity.dart'
     as _i7;
-import 'package:flutter_weater_forecast/features/weater/domain/repositories/weater_repository.dart'
+import 'package:flutter_weater_forecast/features/weather/domain/repositories/weater_repository.dart'
     as _i4;
 import 'package:http/http.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;

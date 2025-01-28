@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_weater_forecast/api/key.dart';
 import 'package:flutter_weater_forecast/api/urls.dart';
 import 'package:flutter_weater_forecast/core/error/exception.dart';
-import 'package:flutter_weater_forecast/features/weater/data/data_source/weather_remote_data_source.dart';
+import 'package:flutter_weater_forecast/features/weather/data/data_source/weather_remote_data_source.dart';
 import 'package:http/http.dart' as http;
 import 'package:mockito/mockito.dart';
 import '../../../../helpers/dummy_data/weather_data.dart';

@@ -1,4 +1,4 @@
-import 'package:flutter_weater_forecast/features/weater/domain/entities/weather_entity.dart';
+import 'package:flutter_weater_forecast/features/weather/domain/entities/weather_entity.dart';
 
 class WeatherModel extends WeatherEntity {
   const WeatherModel({

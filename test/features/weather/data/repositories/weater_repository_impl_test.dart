@@ -6,8 +6,8 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_weater_forecast/core/error/exception.dart';
 import 'package:flutter_weater_forecast/core/error/failure.dart';
-import 'package:flutter_weater_forecast/features/weater/data/data_source/weather_remote_data_source.dart';
-import 'package:flutter_weater_forecast/features/weater/data/repositories/weater_repository_impl.dart';
+import 'package:flutter_weater_forecast/features/weather/data/data_source/weather_remote_data_source.dart';
+import 'package:flutter_weater_forecast/features/weather/data/repositories/weater_repository_impl.dart';
 import 'package:http/http.dart';
 import 'package:mocktail/mocktail.dart';
 
