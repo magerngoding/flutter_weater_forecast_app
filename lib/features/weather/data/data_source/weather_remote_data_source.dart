@@ -44,11 +44,10 @@ class WeatherRemoteDataSourceImpl implements WeatherRemoteDataSource {
 
     final response = await _client.get(url);
     if (response.statusCode == 200) {
-      // ambil body
-      List responseBody = jsonDecode(response.body);
-      return responseBody
-          .map((e) => WeatherModel.fromJson(Map.from(e)))
-          .toList();
+      // refactor here pas error maplists
+      Map responseBody = jsonDecode(response.body);
+      List list = responseBody['list'];
+      return list.map((e) => WeatherModel.fromJson(Map.from(e))).toList();
     } else if (response.statusCode == 404) {
       throw NotFoundException();
     } else {

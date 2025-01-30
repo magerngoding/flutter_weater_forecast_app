@@ -9,9 +9,9 @@ sealed class HourlyForecastState extends Equatable {
 
 final class HourlyForecastInitial extends HourlyForecastState {}
 
-final class HourlyForecastLoading extends HourlyForecastState {}
+class HourlyForecastLoading extends HourlyForecastState {}
 
-final class HourlyForecastFailure extends HourlyForecastState {
+class HourlyForecastFailure extends HourlyForecastState {
   final String message;
 
   HourlyForecastFailure(this.message);
@@ -20,7 +20,7 @@ final class HourlyForecastFailure extends HourlyForecastState {
   List<Object> get props => [message];
 }
 
-final class HourlyForecastSuccess extends HourlyForecastState {
+class HourlyForecastSuccess extends HourlyForecastState {
   final List<WeatherEntity> data;
 
   HourlyForecastSuccess(this.data);

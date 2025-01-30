@@ -10,6 +10,7 @@ import 'package:flutter_weater_forecast/common/app_constant.dart';
 import 'package:flutter_weater_forecast/common/enum.dart';
 import 'package:flutter_weater_forecast/common/extension.dart';
 import 'package:flutter_weater_forecast/features/weather/presentation/bloc/current_weather/current_weather_bloc.dart';
+import 'package:flutter_weater_forecast/features/weather/presentation/pages/hourly_forecast_page.dart';
 import 'package:flutter_weater_forecast/features/weather/presentation/widgets/basic_shadow.dart';
 import 'package:intl/intl.dart';
 
@@ -44,17 +45,13 @@ class _CurrentWeatherPageState extends State<CurrentWeatherPage> {
             child: SizedBox(
               height: MediaQuery.of(context).size.height / 2,
               width: double.infinity,
-              child: BasicShadow(
-                topDown: false,
-              ),
+              child: BasicShadow(topDown: false),
             ),
           ),
           SizedBox(
             height: MediaQuery.of(context).size.height / 8,
             width: double.infinity,
-            child: BasicShadow(
-              topDown: true,
-            ),
+            child: BasicShadow(topDown: true),
           ),
           Column(
             children: [
@@ -303,21 +300,23 @@ class _CurrentWeatherPageState extends State<CurrentWeatherPage> {
           title: 'City',
           icon: Icons.edit,
         ),
-        DView.width(8),
+        DView.spaceWidth(8),
         buttonAction(
-          onTap: () {
-            refresh();
-          },
+          onTap: () => refresh(),
           title: 'Refresh',
           icon: Icons.refresh,
         ),
-        DView.width(8),
+        DView.spaceWidth(8),
         buttonAction(
           onTap: () {
-            Navigator.pushNamed(context, AppRoute.hourlyForecast.name);
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HourlyForecastPage(),
+                ));
           },
           title: 'Hourly',
-          icon: Icons.access_time_rounded,
+          icon: Icons.access_time,
         ),
       ],
     );
