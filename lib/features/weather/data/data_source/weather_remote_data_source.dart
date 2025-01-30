@@ -8,6 +8,7 @@ import 'package:flutter_weater_forecast/features/weather/data/models/weather_mod
 
 abstract class WeatherRemoteDataSource {
   Future<WeatherModel> getCurrentWeather(String cityName);
+  Future<List<WeatherModel>> getHourlyForecast(String cityName);
 }
 
 class WeatherRemoteDataSourceImpl implements WeatherRemoteDataSource {
@@ -27,6 +28,27 @@ class WeatherRemoteDataSourceImpl implements WeatherRemoteDataSource {
       // ambil body
       final responseBody = jsonDecode(response.body);
       return WeatherModel.fromJson(responseBody);
+    } else if (response.statusCode == 404) {
+      throw NotFoundException();
+    } else {
+      throw ServerException();
+    }
+  }
+
+  @override
+  Future<List<WeatherModel>> getHourlyForecast(String cityName) async {
+    String countryCode = 'ID';
+    Uri url = Uri.parse(
+      '${URLs.base}/forecast?q=$cityName, $countryCode&appid=$apiKey',
+    );
+
+    final response = await _client.get(url);
+    if (response.statusCode == 200) {
+      // ambil body
+      List responseBody = jsonDecode(response.body);
+      return responseBody
+          .map((e) => WeatherModel.fromJson(Map.from(e)))
+          .toList();
     } else if (response.statusCode == 404) {
       throw NotFoundException();
     } else {

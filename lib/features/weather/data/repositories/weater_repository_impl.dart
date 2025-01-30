@@ -34,4 +34,23 @@ class WeaterRepositoryImpl implements WeatherRepository {
       return Left(SomethingFailure('Something wrong occure'));
     }
   }
+
+  @override
+  Future<Either<Failure, List<WeatherEntity>>> getHourlyForecast(
+      String cityName) async {
+    try {
+      final result = await remoteDataSource.getHourlyForecast(cityName);
+      final list = result.map((e) => e.toEntity).toList();
+      return Right(list);
+    } on NotFoundException {
+      return Left(NotFoundFailure('Not found'));
+    } on ServerException {
+      return Left(ServerFailure('Server error'));
+    } on SocketException {
+      return Left(ConnectionFailure('Failed connect to the network'));
+    } catch (e) {
+      debugPrint('Something Failure: $e');
+      return Left(SomethingFailure('Something wrong occure'));
+    }
+  }
 }
